@@ -26,13 +26,13 @@ func _input(event):
 	if event is InputEventKey and event.pressed: # A key was pressed
 		currentDir = Vector2() 
 		movingKey = true
-		if event.scancode == KEY_W:
+		if Input.is_key_pressed(KEY_W):
 			currentDir += moves['up']
-		if event.scancode == KEY_A:
+		if Input.is_key_pressed(KEY_A):
 			currentDir += moves['left']
-		if event.scancode == KEY_S:
+		if Input.is_key_pressed(KEY_S):
 			currentDir += moves['down']
-		if event.scancode == KEY_D:
+		if Input.is_key_pressed(KEY_D):
 			currentDir += moves['right']
 	if event is InputEventKey and event.pressed == false:
 		movingKey = false # The key was released
