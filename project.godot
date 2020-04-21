@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="generic-rpg"
+run/main_scene="res://Player_Char.tscn"
 config/icon="res://icon.png"
 
 [rendering]
