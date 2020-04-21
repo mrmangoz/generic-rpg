@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://say-hello.gd" type="Script" id=2]
 
 [node name="Panel" type="Panel"]
 anchor_left = 0.122
@@ -11,6 +12,7 @@ margin_left = 0.071991
 margin_top = 0.200001
 margin_right = -0.360046
 margin_bottom = 0.199982
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,6 +26,7 @@ margin_left = -0.30603
 margin_top = 0.199997
 margin_right = 0.103973
 margin_bottom = -0.155003
+text = "this is a label"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -37,4 +40,5 @@ margin_left = -0.266022
 margin_top = 0.0909958
 margin_right = -13.45
 margin_bottom = 0.0809937
+text = "button"
 script = ExtResource( 1 )
