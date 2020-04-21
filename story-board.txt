@@ -1,0 +1,33 @@
+Intro:
+
+* Start on the road towards small mountainside village.
+* Two screens until you arrive
+  - initial starting screens
+  - one more along the road where an event takes place
+* First Event:
+  - encounter a slime enemy
+  - slime enemy drops slime and a mysterious key (key will be used later on)
+* This is the end of the intro (intro will be used as a tutorial, not skippable)
+* Next screen is the entrance to the village, which has been shut and has a guard posted
+
+NOTES:
+
+* You can go between screens
+* Some coins are available to loot - part of the tutorial
+* tutorial is setup with signs so as to keep the game moving, and to allow tutorial to be soft - skipped
+
+--------------------------------------------------------------------------------
+
+Entrance Screen:
+
+* You can talk to the guard - however he will not let you in.
+  - he says there are too many slimes to be letting strangers in
+* After the initial interaction he will just say "..." and not let you in
+* You then have the option to go up or down a screen, but those screens are dead - ends
+  - you have to give the guard the slime you picked up on the second screen for him to unlock the gate
+
+NOTES:
+
+* No lootables on entrance screens
+* More slimes up and down screens
+* Going up a screen there is a chest with a potion and some coins
