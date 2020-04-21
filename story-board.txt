@@ -28,6 +28,15 @@ Entrance Screen:
 
 NOTES:
 
-* No lootables on entrance screens
+* No lootables on entrance screen
 * More slimes up and down screens
 * Going up a screen there is a chest with a potion and some coins
+
+--------------------------------------------------------------------------------
+
+Inside Village:
+
+* Three Screens:
+  - Town Hall
+  - Shop
+  - Mountain Entrance
