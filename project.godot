@@ -16,8 +16,17 @@ _global_script_class_icons={
 [application]
 
 config/name="generic-rpg"
-run/main_scene="res://Player_Char.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://Screen1.tscn"
+config/icon="res://art/icon.png"
+
+[autoload]
+
+SceneChanger="*res://SceneChanger.gd"
+
+[display]
+
+window/size/width=768
+window/size/height=432
 
 [rendering]
 
