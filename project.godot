@@ -17,17 +17,13 @@ _global_script_class_icons={
 
 config/name="generic-rpg"
 run/main_scene="res://Screen1.tscn"
-config/icon="res://art/icon.png"
 
 [autoload]
 
-SceneChanger="*res://SceneChanger.gd"
+SceneChanger="*res://SceneChanger.tscn"
+Global="*res://Global.gd"
 
 [display]
 
 window/size/width=768
 window/size/height=432
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

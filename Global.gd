@@ -1,10 +1,11 @@
 extends Node2D
 
 
-var rightPointer = "Screen2.tscn" # Pointers to where each direction will go
-var leftPointer = "Screen3.tscn"
-var upPointer = null
-var downPointer = null
+var storedPositionY = null
+var storedPositionX = null
+var canMove = true
+var storedPos = Vector2(100, 100)
+#var currentScreen = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

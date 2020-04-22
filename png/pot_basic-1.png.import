@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg2.png-cc61a5379a373a270a8e86cc02e43fd3.stex"
+path="res://.import/pot_basic-1.png-22a6c74a28b2df4ea5b45427fba542c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bg2.png"
-dest_files=[ "res://.import/bg2.png-cc61a5379a373a270a8e86cc02e43fd3.stex" ]
+source_file="res://png/pot_basic-1.png"
+dest_files=[ "res://.import/pot_basic-1.png-22a6c74a28b2df4ea5b45427fba542c0.stex" ]
 
 [params]
 

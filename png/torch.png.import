@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bg3.png-ab0ca9dd024e22bb02e68fdaf79ba0cf.stex"
+path="res://.import/torch.png-58277b5504ec19d0d6c0b9fd20b934f6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/bg3.png"
-dest_files=[ "res://.import/bg3.png-ab0ca9dd024e22bb02e68fdaf79ba0cf.stex" ]
+source_file="res://png/torch.png"
+dest_files=[ "res://.import/torch.png-58277b5504ec19d0d6c0b9fd20b934f6.stex" ]
 
 [params]
 
