@@ -1,4 +1,4 @@
-extends Area2D
+extends KinematicBody2D
 
 
 export (int) var speed 
@@ -12,7 +12,9 @@ onready var sceneChg = get_node("/root/SceneChanger")
 
 # Calls every time the scene changes
 func _ready():
+	
 	position = globalVars.storedPos
+	#print("Current Tree: " + currTree.get_name())
 	self.visible = true
 	globalVars.canMove = true
 	width = get_viewport_rect().size.x
@@ -36,8 +38,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	currTree = get_tree().get_current_scene() # The current parent node
-	
+	# The current parent node
+	currTree = get_tree().get_current_scene().get_child(0)
 	# if off to the right
 	if self.position.x >= width and currTree.rightPointer != null:
 		globalVars.storedPos.x = 10
@@ -66,7 +68,7 @@ func _process(delta):
 func sceneChangeSteps(pointer):
 	self.visible = false
 	position = globalVars.storedPos
-	SceneChanger.change_scene(pointer)
+	SceneChanger._change_scene(currTree.get_name(), pointer)
 	
 
 # Called every frame
@@ -85,3 +87,10 @@ func _physics_process(delta):
 		if currVel.length() > 0:
 			currVel = currVel.normalized() * speed
 		position += currVel
+
+func save_scene():
+	pass
+	#for i in 
+
+func load_scene():
+	pass

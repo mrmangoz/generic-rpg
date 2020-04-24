@@ -2,7 +2,7 @@ extends Node2D
 
 
 var rightPointer = null
-var leftPointer = "Screen1.tscn"
+var leftPointer = "Screen1"
 var upPointer = null
 var downPointer = null
 

@@ -1,8 +1,8 @@
 extends Node2D
 
 
-var rightPointer = "Screen2.tscn" # Pointers to where each direction will go
-var leftPointer = "Screen3.tscn"
+var rightPointer = "Screen2" # Pointers to where each direction will go
+var leftPointer = "Screen3"
 var upPointer = null
 var downPointer = null
 

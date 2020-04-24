@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://png/bg1.png" type="Texture" id=2]
 [ext_resource path="res://Screen1.gd" type="Script" id=3]
+[ext_resource path="res://Pot.tscn" type="PackedScene" id=5]
 
 [node name="Screen1" type="Node2D"]
 script = ExtResource( 3 )
@@ -10,9 +11,15 @@ script = ExtResource( 3 )
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -0.498978
+margin_right = 768.0
+margin_bottom = 431.501
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Pot" parent="." instance=ExtResource( 5 )]
+position = Vector2( 619.208, 119.175 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

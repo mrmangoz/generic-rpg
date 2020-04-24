@@ -1,18 +1,22 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://png/pot_vines-1.png" type="Texture" id=2]
+[ext_resource path="res://png/standing-1.png.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 32 )
+[sub_resource type="CapsuleShape2D" id=1]
+height = 14.3144
 
-[node name="Player" type="Area2D"]
-gravity_point = true
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 speed = 10
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=[
+"Persist",
+]]
+position = Vector2( -0.16993, 1.0196 )
+scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
