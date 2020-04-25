@@ -6,6 +6,8 @@ var currVel
 var height
 var width
 var currTree
+var movements
+var playAnim 
 
 onready var globalVars = get_node("/root/Global")
 onready var sceneChg = get_node("/root/SceneChanger")
@@ -86,7 +88,23 @@ func _physics_process(delta):
 			currVel.x += 1
 		if currVel.length() > 0:
 			currVel = currVel.normalized() * speed
-		position += currVel
+			if currVel.y != 0:
+				playAnim = "walk_up"
+				if currVel.y > 0:
+					playAnim = "walk_down"
+			if currVel.x != 0:
+				playAnim = "walk_right"
+				if currVel.x < 0:
+					playAnim = "walk_left"
+			
+			$AnimationPlayer.play(playAnim)
+		else:
+			$AnimationPlayer.stop()
+		position += currVel * delta
+		
+		
+			
+			
 
 func save_scene():
 	pass
