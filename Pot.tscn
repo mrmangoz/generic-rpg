@@ -4,7 +4,6 @@
 [ext_resource path="res://Pot.gd" type="Script" id=2]
 [ext_resource path="res://PotSprite.gd" type="Script" id=3]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "Destroy"
 length = 0.3

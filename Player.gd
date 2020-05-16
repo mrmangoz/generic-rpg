@@ -11,6 +11,7 @@ var playAnim
 
 onready var globalVars = get_node("/root/Global")
 onready var sceneChg = get_node("/root/SceneChanger")
+onready var playerInv = get_node("/root/Inventory")
 
 # Calls every time the scene changes
 func _ready():
@@ -20,7 +21,8 @@ func _ready():
 	self.visible = true
 	globalVars.canMove = true
 	width = get_viewport_rect().size.x
-	height = get_viewport_rect().size.y	
+	height = get_viewport_rect().size.y
+	print(playerInv.playerItems)
 
 # The basic process is as follows:
 # Detect which side of the screen the player has left
@@ -42,13 +44,13 @@ func _ready():
 func _process(delta):
 	# The current parent node
 	currTree = get_tree().get_current_scene().get_child(0)
-	# if off to the right
+	# if off the right
 	if self.position.x >= width and currTree.rightPointer != null:
 		globalVars.storedPos.x = 10
 		globalVars.storedPos.y = position.y
 		sceneChangeSteps(currTree.rightPointer)
 		
-	# iff off to the left
+	# if off the left
 	if self.position.x <= 0 and currTree.leftPointer != null:
 		globalVars.storedPos.x = width-10
 		globalVars.storedPos.y = position.y
@@ -101,10 +103,7 @@ func _physics_process(delta):
 		else:
 			$AnimationPlayer.stop()
 		position += currVel * delta
-		
-		
-			
-			
+
 
 func save_scene():
 	pass
