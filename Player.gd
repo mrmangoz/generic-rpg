@@ -22,7 +22,6 @@ func _ready():
 	globalVars.canMove = true
 	width = get_viewport_rect().size.x
 	height = get_viewport_rect().size.y
-	print(playerInv.playerItems)
 
 # The basic process is as follows:
 # Detect which side of the screen the player has left

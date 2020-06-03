@@ -3,6 +3,8 @@ extends RigidBody2D
 
 var rng = RandomNumberGenerator.new()
 onready var playerInv = get_node("/root/Inventory")
+var pickable = false
+var pickableTimer = 0.5
 
 func _ready():
 	self.contact_monitor = true;
@@ -21,12 +23,17 @@ func _physics_process(delta):
 					#activated = true
 					#self.drop_items()
 					###
-				var selfNamePath = self.get_filename()
-				print(selfNamePath)
-				if playerInv.playerItems.has(selfNamePath):
-					playerInv.playerItems[selfNamePath] += 1
-				else:
-					playerInv.playerItems[selfNamePath] = 1
+				if !pickable:
+					#wait for pickup timer
+					self.pickable = true
+				playerPickup()
 					
-				self.queue_free()
 
+func playerPickup():
+	var selfNamePath = self.get_filename()
+	if playerInv.playerItems.has(selfNamePath):
+		playerInv.playerItems[selfNamePath] += 1
+	else:
+		playerInv.playerItems[selfNamePath] = 1
+						
+	self.queue_free()
