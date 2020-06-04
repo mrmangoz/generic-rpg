@@ -10,15 +10,13 @@ onready var potSprite = get_node("Sprite")
 export (int) var newFrame
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 # loop through the items in the container and instance them, with the scene as the parent
 # Currently adds random velocity to add dynamicness
 # Should probably sort a system for less random, more direction velocity
 func drop_items():
 	for pickup in self.items:
+		print(pickup)
 		var temp = load(pickup)
 		for i in range(self.items[pickup]):
 			var nNode = temp.instance()
@@ -27,8 +25,9 @@ func drop_items():
 			rng.randomize()
 			nNode.set_linear_velocity(Vector2(rng.randi_range(-500, 500), rng.randi_range(-500, 500)))
 			var parent_node = get_tree().get_root().get_node("main").get_child(0)
-			nNode.set_owner(parent_node) # Necessary for persistence in packedscenes
 			parent_node.add_child(nNode)
+			nNode.set_owner(parent_node) # Necessary for persistence in packedscenes
+			
 			
 			
 

@@ -44,28 +44,40 @@ func _process(delta):
 	# The current parent node
 	currTree = get_tree().get_current_scene().get_child(0)
 	# if off the right
-	if self.position.x >= width and currTree.rightPointer != null:
-		globalVars.storedPos.x = 10
-		globalVars.storedPos.y = position.y
-		sceneChangeSteps(currTree.rightPointer)
+	if self.position.x >= width:
+		if currTree.rightPointer != null:
+			globalVars.storedPos.x = 10
+			globalVars.storedPos.y = position.y
+			sceneChangeSteps(currTree.rightPointer)
+		else:
+			self.position.x = width - 1
 		
 	# if off the left
-	if self.position.x <= 0 and currTree.leftPointer != null:
-		globalVars.storedPos.x = width-10
-		globalVars.storedPos.y = position.y
-		sceneChangeSteps(currTree.leftPointer)
+	if self.position.x <= 0:
+		if currTree.leftPointer != null:
+			globalVars.storedPos.x = width-10
+			globalVars.storedPos.y = position.y
+			sceneChangeSteps(currTree.leftPointer)
+		else:
+			self.position.x = 1
 	
 	# if off the bottom
-	if self.position.y >= height and currTree.downPointer != null:
-		globalVars.storedPos.y = 10
-		globalVars.storedPos.x = position.x
-		sceneChangeSteps(currTree.downPointer)
+	if self.position.y >= height:
+		if currTree.downPointer != null:
+			globalVars.storedPos.y = 10
+			globalVars.storedPos.x = position.x
+			sceneChangeSteps(currTree.downPointer)
+		else:
+			self.position.y = height - 1 
 	
 	# if off the top
-	if self.position.y <= 0 and currTree.upPointer != null:
-		globalVars.storedPos.y = height - 10
-		globalVars.storedPos.x = position.x
-		sceneChangeSteps(currTree.upPointer)
+	if self.position.y <= 0: 
+		if currTree.upPointer != null:
+			globalVars.storedPos.y = height - 10
+			globalVars.storedPos.x = position.x
+			sceneChangeSteps(currTree.upPointer)
+		else:
+			self.position.y = 1
 		
 # Modular code bby
 func sceneChangeSteps(pointer):

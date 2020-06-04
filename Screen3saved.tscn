@@ -1,197 +1,60 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://png/bg3.png" type="Texture" id=1]
-[ext_resource path="res://Coin.gd" type="Script" id=2]
-[ext_resource path="res://Pot.gd" type="Script" id=3]
-[ext_resource path="res://Screen3.gd" type="Script" id=4]
+[ext_resource path="res://Pot.gd" type="Script" id=1]
+[ext_resource path="res://png/bg3.png" type="Texture" id=2]
+[ext_resource path="res://Pot.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player.gd" type="Script" id=5]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Pot.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Screen3.gd" type="Script" id=6]
 
 [node name="Screen3" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" type="KinematicBody2D" parent="." instance=ExtResource( 6 )]
+[node name="Player" type="KinematicBody2D" parent="." instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 10, 291.206 )
+position = Vector2( 10, 398.002 )
 script = ExtResource( 5 )
 speed = 350
 
-[node name="Pot" type="Area2D" parent="." instance=ExtResource( 7 )]
+[node name="Pot" type="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 277.611, 191.568 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 3 )
-activated = true
-newFrame = 3
-
-[node name="Pot2" type="Area2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 212.673, 194.815 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 3 )
-activated = true
-newFrame = 3
-
-[node name="Pot3" type="Area2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 155.852, 191.568 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 3 )
-activated = true
-newFrame = 3
-
-[node name="Pot4" type="Area2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 108.772, 240.271 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 3 )
-activated = true
-newFrame = 3
-
-[node name="Pot5" type="Area2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 112.018, 137.994 )
-scale = Vector2( 2, 2 )
-script = ExtResource( 3 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
 activated = 0
 newFrame = 0
 
-[node name="Coin" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 357.522, 231.564 )
-rotation = -1.53471
-scale = Vector2( 1, 1 )
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.000208326, 7.52966e-05 )
-linear_damp = 5.0
-angular_velocity = -0.509275
-script = ExtResource( 2 )
+[node name="Pot2" type="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 212.673, 194.815 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+activated = 0
+newFrame = 0
 
-[node name="@Coin@7" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 249.972, 123.645 )
-rotation = -0.237376
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( -8.3625e-05, -0.000178021 )
-linear_damp = 5.0
-angular_velocity = -0.426335
-script = ExtResource( 2 )
+[node name="Pot3" type="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 155.852, 191.568 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+activated = 0
+newFrame = 0
 
-[node name="@Coin@8" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 218.262, 99.8098 )
-rotation = 0.645661
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.000407701, -0.000530244 )
-linear_damp = 5.0
-angular_velocity = -0.361441
-script = ExtResource( 2 )
+[node name="Pot4" type="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 108.772, 240.271 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+activated = 0
+newFrame = 0
 
-[node name="@Coin@10" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 269.855, 217.268 )
-rotation = 0.136815
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.0003122, 8.56867e-05 )
-linear_damp = 5.0
-angular_velocity = -0.970625
-script = ExtResource( 2 )
-
-[node name="@Coin@11" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 235.874, 177.97 )
-rotation = -1.21621
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.000386374, -0.000349995 )
-linear_damp = 5.0
-angular_velocity = 0.0126953
-script = ExtResource( 2 )
-
-[node name="@Coin@12" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 214.523, 191.915 )
-rotation = 2.99589
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.000506558, 0.000158669 )
-linear_damp = 5.0
-angular_velocity = -0.415737
-script = ExtResource( 2 )
-
-[node name="@Coin@13" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 215.464, 128.153 )
-rotation = 0.370934
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 2.02755e-06, -0.000248477 )
-linear_damp = 5.0
-angular_velocity = 0.0323586
-script = ExtResource( 2 )
-
-[node name="@Coin@14" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 177.574, 211.532 )
-rotation = 0.125316
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.000419548, 5.26591e-05 )
-linear_damp = 5.0
-angular_velocity = 0.0156196
-script = ExtResource( 2 )
-
-[node name="@Coin@15" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 190.409, 190.317 )
-rotation = -1.27814
-scale = Vector2( 1, 1 )
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.000500138, 7.75625e-05 )
-linear_damp = 5.0
-angular_velocity = 0.485762
-script = ExtResource( 2 )
-
-[node name="@Coin@16" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 193.803, 103.341 )
-rotation = 0.913759
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.000169865, -0.00106371 )
-linear_damp = 5.0
-angular_velocity = 0.684593
-script = ExtResource( 2 )
-
-[node name="@Coin@18" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 57.6223, 215.458 )
-rotation = -0.00315354
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-sleeping = true
-linear_velocity = Vector2( -0.136144, -0.0737449 )
-linear_damp = 5.0
-script = ExtResource( 2 )
-
-[node name="@Coin@19" type="RigidBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 106.533, 176.367 )
-rotation = 0.0240846
-scale = Vector2( 1, 1 )
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-sleeping = true
-linear_velocity = Vector2( -0.0108297, -0.150068 )
-linear_damp = 5.0
-script = ExtResource( 2 )
+[node name="Pot5" type="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 112.018, 137.994 )
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 1 )
+activated = 0
+newFrame = 0

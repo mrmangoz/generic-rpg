@@ -25,6 +25,7 @@ func _change_scene(currentScene, nextScene):
 		print("--------")
 		for itemEx in levelHandler.get_child(0).get_children():
 			print(itemEx.get_name() + ", parent: " + itemEx.get_parent().get_name() + ", owner: " + itemEx.get_owner().get_name())
+			#print(itemEx.get_name())
 		var packScene = PackedScene.new()
 		var finishedScene = packScene.pack(levelHandler.get_child(0))
 		var error = ResourceSaver.save("res://" + currentScene + "saved.tscn", packScene)

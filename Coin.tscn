@@ -10,6 +10,7 @@ radius = 16.1267
 position = Vector2( -0.166077, -0.332169 )
 gravity_scale = 0.0
 linear_damp = 5.0
+angular_damp = 100.0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
