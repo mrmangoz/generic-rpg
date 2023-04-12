@@ -6,17 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[  ]
-_global_script_class_icons={
-
-}
+config_version=5
 
 [application]
 
 config/name="generic-rpg"
 run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.0")
 
 [autoload]
 
@@ -26,8 +22,8 @@ Inventory="*res://Inventory.gd"
 
 [display]
 
-window/size/width=768
-window/size/height=432
+window/size/viewport_width=768
+window/size/viewport_height=432
 
 [importer_defaults]
 

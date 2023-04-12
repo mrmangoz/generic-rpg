@@ -1,15 +1,11 @@
 extends Area2D
 
-
 var items = {}
 var rng = RandomNumberGenerator.new()
-export (int) var activated = false
-onready var animator = get_node("AnimationPlayer")
-onready var potSprite = get_node("Sprite")
-
-export (int) var newFrame
-
-
+@export var activated = false
+@onready var animator = get_node("AnimationPlayer")
+@onready var potSprite = get_node("Sprite2D")
+@export var newFrame: int 
 
 # loop through the items in the container and instance them, with the scene as the parent
 # Currently adds random velocity to add dynamicness
@@ -19,7 +15,7 @@ func drop_items():
 		print(pickup)
 		var temp = load(pickup)
 		for i in range(self.items[pickup]):
-			var nNode = temp.instance()
+			var nNode = temp.instantiate()
 			nNode.position.x = self.position.x
 			nNode.position.y = self.position.y
 			rng.randomize()

@@ -8,9 +8,9 @@ var rooms = {
 	Screen3 = "res://Screen3.tscn"
 }
 
-onready var animationPlayer = self.get_node("AnimationPlayer")
-onready var black = self.get_node("Control/blackRect")
-onready var globalVars = get_node("/root/Global")
+@onready var animationPlayer = self.get_node("AnimationPlayer")
+@onready var black = self.get_node("Control/blackRect")
+@onready var globalVars = get_node("/root/Global")
 
 func _ready():
 	pass
@@ -28,7 +28,7 @@ func _change_scene(currentScene, nextScene):
 			#print(itemEx.get_name())
 		var packScene = PackedScene.new()
 		var finishedScene = packScene.pack(levelHandler.get_child(0))
-		var error = ResourceSaver.save("res://" + currentScene + "saved.tscn", packScene)
+		var error = ResourceSaver.save(packScene, "res://" + currentScene + "saved.tscn")
 		if error != OK:
 			push_error("An error occurred while saving the scene to disk.")
 		else:
@@ -38,7 +38,7 @@ func _change_scene(currentScene, nextScene):
 
 		# Free Current Scene
 		animationPlayer.play("fade")
-		yield(animationPlayer, "animation_finished")
+		await animationPlayer.animation_finished
 		levelHandler.get_child(0).queue_free()
 		#print("Room freed")
 
@@ -49,10 +49,10 @@ func _change_scene(currentScene, nextScene):
 
 
 		# Instance next Scene
-		levelHandler.add_child(load(rooms[nextScene]).instance())
+		levelHandler.add_child(load(rooms[nextScene]).instantiate())
 		#print(rooms[nextScene] + " Loaded")
 		animationPlayer.play_backwards("fade")
-		yield(animationPlayer, "animation_finished")
+		await animationPlayer.animation_finished
 		globalVars.canMove = true
 	else:
 		print("Failed list check")

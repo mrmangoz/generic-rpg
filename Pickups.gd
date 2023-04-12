@@ -2,13 +2,13 @@ extends RigidBody2D
 
 
 var rng = RandomNumberGenerator.new()
-onready var playerInv = get_node("/root/Inventory")
+@onready var playerInv = get_node("/root/Inventory")
 var pickable = false
 var pickableTimer = 0.5
 
 func _ready():
 	self.contact_monitor = true;
-	self.contacts_reported = 10;
+	self.max_contacts_reported = 10;
 
 func _physics_process(delta):
 	var currBodies = self.get_colliding_bodies() # Get a list of bodies currently intersecting it
@@ -30,7 +30,7 @@ func _physics_process(delta):
 					
 
 func playerPickup():
-	var selfNamePath = self.get_filename()
+	var selfNamePath = self.get_scene_file_path()
 	if playerInv.playerItems.has(selfNamePath):
 		playerInv.playerItems[selfNamePath] += 1
 	else:

@@ -1,88 +1,50 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=3]
 
-[ext_resource path="res://png/bg1.png" type="Texture" id=1]
-[ext_resource path="res://Coin.gd" type="Script" id=2]
-[ext_resource path="res://Pot.gd" type="Script" id=3]
-[ext_resource path="res://Screen1.gd" type="Script" id=4]
-[ext_resource path="res://Signboard.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Coin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Pot.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Player.gd" type="Script" id=9]
-[ext_resource path="res://Heart.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Heart.gd" type="Script" id=11]
+[ext_resource type="Script" path="res://Screen1.gd" id="1_1pqab"]
+[ext_resource type="Texture2D" path="res://png/bg1.png" id="2_1pg1u"]
+[ext_resource type="PackedScene" path="res://Pot.tscn" id="3_88067"]
+[ext_resource type="Script" path="res://Pot.gd" id="4_bvewq"]
+[ext_resource type="PackedScene" path="res://Coin.tscn" id="5_1mc3f"]
+[ext_resource type="Script" path="res://Coin.gd" id="6_w4l40"]
+[ext_resource type="PackedScene" path="res://Signboard.tscn" id="7_gdbyq"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="8_ay5m2"]
+[ext_resource type="Script" path="res://Player.gd" id="9_apib3"]
 
 [node name="Screen1" type="Node2D"]
-script = ExtResource( 4 )
+script = ExtResource("1_1pqab")
 
 [node name="background" type="TextureRect" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -0.498978
-margin_right = 768.0
-margin_bottom = 431.501
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+offset_top = -0.498978
+offset_right = 768.0
+offset_bottom = 431.501
+texture = ExtResource("2_1pg1u")
 
-[node name="Pot" type="Area2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 619.208, 119.175 )
-scale = Vector2( 1.5, 1.5 )
-script = ExtResource( 3 )
-activated = true
-newFrame = 3
+[node name="Pot" type="Area2D" parent="." instance=ExtResource("3_88067")]
+position = Vector2(619.208, 119.175)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("4_bvewq")
+activated = false
+newFrame = 0
 
-[node name="Player" type="KinematicBody2D" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 10, 179.388 )
-script = ExtResource( 9 )
-speed = 350
-
-[node name="Coin" type="RigidBody2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 174, 285 )
+[node name="Coin" type="RigidBody2D" parent="." instance=ExtResource("5_1mc3f")]
+position = Vector2(174, 285)
 gravity_scale = 0.0
-contacts_reported = 10
+max_contacts_reported = 10
 contact_monitor = true
 sleeping = true
 linear_damp = 5.0
 angular_damp = 100.0
-script = ExtResource( 2 )
+script = ExtResource("6_w4l40")
 
-[node name="Sign" type="Area2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 426, 78 )
-scale = Vector2( 2, 2 )
+[node name="Sign" type="Area2D" parent="." instance=ExtResource("7_gdbyq")]
+position = Vector2(426, 78)
+scale = Vector2(2, 2)
 
-[node name="@Coin@2" type="RigidBody2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 622.682, 112.015 )
-rotation = -0.139556
-scale = Vector2( 1, 1 )
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.0860232, -0.22632 )
-linear_damp = 5.0
-angular_damp = 100.0
-script = ExtResource( 2 )
-
-[node name="Heart" type="RigidBody2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 629.188, 90.032 )
-rotation = -0.527807
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.0910397, -0.225001 )
-linear_damp = 5.0
-angular_damp = 100.0
-script = ExtResource( 11 )
-
-[node name="@Heart@3" type="RigidBody2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 637.974, 58.8194 )
-rotation = -0.377518
-gravity_scale = 0.0
-contacts_reported = 10
-contact_monitor = true
-linear_velocity = Vector2( 0.0807897, -0.322236 )
-linear_damp = 5.0
-angular_damp = 100.0
-script = ExtResource( 11 )
+[node name="Player" type="CharacterBody2D" parent="." instance=ExtResource("8_ay5m2")]
+visible = false
+position = Vector2(758, 197.545)
+script = ExtResource("9_apib3")
+speed = 350

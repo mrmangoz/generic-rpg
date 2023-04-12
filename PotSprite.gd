@@ -1,5 +1,5 @@
-extends Sprite
+extends Sprite2D
 
 
-func set_frame(newFrame):
-	frame = newFrame
+#func set_frame(newFrame):
+#	frame = newFrame

@@ -1,7 +1,7 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 
-export (int) var speed 
+@export var speed: int 
 var currVel 
 var height
 var width
@@ -9,9 +9,9 @@ var currTree
 var movements
 var playAnim 
 
-onready var globalVars = get_node("/root/Global")
-onready var sceneChg = get_node("/root/SceneChanger")
-onready var playerInv = get_node("/root/Inventory")
+@onready var globalVars = get_node("/root/Global")
+@onready var sceneChg = get_node("/root/SceneChanger")
+@onready var playerInv = get_node("/root/Inventory")
 
 # Calls every time the scene changes
 func _ready():
